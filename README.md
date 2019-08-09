@@ -42,7 +42,7 @@
 * 3.函数调用：主调函数的变量，指针等内容都存储在栈中。
 
 #### 3.[队列](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/tree/master/ch03_List_Stack_Queue/Queue) - 2019.8.9
-1. 队列的构造和实现：链表和数组两种方式，两个结构体不一样，操作一样
+1. 队列的构造和实现：链表和数组两种方式，两个结构体不一样，操作一样。 [实现参考](https://blog.csdn.net/song_hui_xiang/article/details/47146503)
 * [数组实现](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch03_List_Stack_Queue/Queue/1_Queue_with_Array.c)：两个结构体，队和队中的节点。注意指针
 * [链表实现](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch03_List_Stack_Queue/Queue/2_Queue_with_List.c)：主要是判空条件，不同的实现方法。rear和front的关系，或者增加size变量。
 2. 例子
