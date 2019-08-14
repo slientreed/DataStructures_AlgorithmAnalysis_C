@@ -82,6 +82,7 @@ struct TreeNode
 * 如果是操作数：生成树节点，压入栈中；
 * 如果是操作符：从栈中弹出两个树节点T1,T2，形成一个新树，树根为操作符，左右儿子分别是T2,T1(先出栈的是右孩子),然后压入栈中；
 
-3. [表达式树完整代码实现]()
+3. [表达式树完整代码实现](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch04_Tree/1_Express_Tree.c).
+* [参考](https://blog.csdn.net/buaa_shang/article/details/9124075).
 
 ## 3. 总结
