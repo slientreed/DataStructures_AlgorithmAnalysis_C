@@ -7,6 +7,7 @@
 3. 目的：刷了剑指offer,觉得自己缺乏对数据结构的算法的整体把握，通过这本书能有个全面的总结学习，以后再继续深入。
 
 ## 2. 内容
+-----
 ### 第1章 绪论 - 2019.8.1
 1. 主要内容
 * 大量输入下的程序性能重要性
@@ -14,6 +15,7 @@
 * 递归：基准，推进，设计，效益。
 2. 大致作为引论的功能，了解
 
+-----
 ### [第2章 算法分析](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/tree/master/ch02_Algorithm_Analysis)  - 2019.8.1
 1. 主要内容：
 * 数学公式：阐述了几个复杂度的数学概念，四定义，三法则。对时间复杂度，增长率清晰了不少
@@ -22,6 +24,7 @@
 3. 给了三个对数复杂度的问题。跟对数相关主要是折半。[代码在这里](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch02_Algorithm_Analysis/2.%E5%AF%B9%E6%95%B0%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%89%E4%B8%AA%E4%BE%8B%E5%AD%90.c)
 ##### ***总结：这一章对后面的算法复杂度分析会很重要，看明白神清气爽！***
 
+-----
 ### [第3章 表,栈,队列](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/tree/master/ch03_List_Stack_Queue) 2019.8.8
 #### 1.[表](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/tree/master/ch03_List_Stack_Queue/List) - 2019.8.8
 1. [实现方法：](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/tree/master/ch03_List_Stack_Queue/List)
@@ -51,4 +54,29 @@
 
 #### ***总结：这三个是最基础的数据结构，后面高级数据结构以及算法的实现会大量用到它们，要烂熟于心，灵活调用！***
 
+----
+### [第4章 树]()  - 2019.8.14
+#### 4.1 树的定义实现，遍历和应用
+1. 实现：树节点结构体：每个节点存放数据，以及儿子节点的指针。
+2. 应用：操作系统目录结构。
+* 先序 - 打印文件名
+* 后序 - 计算磁盘大小
+
+#### 4.2 二叉树
+#### 1. 实现：定义二叉树节点。
+```C++
+typedef struct TreeNode *pNode;
+typedef struct pNode Tree;
+
+struct TreeNode
+{
+    ElementType Element;
+    Tree Left;
+    Tree Right;
+}
+```
+#### 2. 应用：
+1. 表达式树：树叶是操作数，其他节点是操作符。表达式树后序遍历是[后缀表达式](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch03_List_Stack_Queue/Stack/examples/2_Postfix_Operation.c)，中序遍历是中序表达式。
+2. 实现思路：
+* 每次读入
 ## 3. 总结
