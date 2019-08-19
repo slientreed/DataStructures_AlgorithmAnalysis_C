@@ -63,7 +63,7 @@
 * 后序 - 计算磁盘大小
 
 #### 4.2 二叉树
-#### 1. 实现：定义二叉树节点。
+##### 1. 实现：定义二叉树节点。
 ```C++
 typedef struct TreeNode *pNode;
 typedef struct pNode Tree;
@@ -75,7 +75,7 @@ struct TreeNode
     Tree Right;
 }
 ```
-#### 2. 应用：
+##### 2. 应用：
 1. 表达式树：树叶是操作数，其他节点是操作符。表达式树后序遍历是[后缀表达式](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch03_List_Stack_Queue/Stack/examples/2_Postfix_Operation.c)，中序遍历是中序表达式。
 2. 实现思路：[参考](https://blog.csdn.net/buaa_shang/article/details/9124075).
 * 每次读入一个符号表达式；
@@ -83,5 +83,41 @@ struct TreeNode
 * 如果是操作符：从栈中弹出两个树节点T1,T2，形成一个新树，树根为操作符，左右儿子分别是T2,T1(先出栈的是右孩子),然后压入栈中；
 
 3. [表达式树完整代码实现](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch04_Tree/1_Express_Tree.c).
+
+#### 4.3 二叉查找树
+1. 性质：每个节点X，左子树的关键值小于X,右子树的关键值大于X;查找复杂度为O(logn)
+2. 二叉查找树的构造和使用:[完整代码](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch04_Tree/2_Binary_Search_Tree.c).
+* MakeEmpty(),Find()
+* FindMin(),FindMax():递归左右子树即可
+* Insert
+* Delete:三种情况：待删节点是树叶，有1个孩子，有2个孩子(用右子树最小值代替，然后删除右子树最小值)。
+
+#### 4.4 AVL平衡二叉树   - 2019.8.19
+1. 性质：**每个节点**的左子树和右子树的高度最多差1的**二叉查找树**。在插入和删除时，要使用保持平衡性质。（单旋转，双旋转）
+2. [AVL平衡二叉树的构造和使用,完整实现](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch04_Tree/3_AVL_Tree.c)。
+* MakeEmpty(), Find(), SingleRotateWithLeft(), SingleRotateWithRight(), DoubleRotateWithLeft(), DoubleRotateWithRight(),Insert(), Delete().
+* [参考代码](https://blog.csdn.net/men_wen/article/details/68937187)
+
+#### 4.5. 伸展树   - 2019.8.19
+1. 基本思想：当一个节点被访问后，它要经过一系列AVL树的旋转被放到跟上。（当前被操作的节点很有很能在最近一段时间频繁访问）。
+2. [实现参考](https://blog.csdn.net/xiaohusaier/article/details/76173199)
+
+#### 4.6 B-树（M值为3，2—3树）
+1. 性质：
+* 树的根要么是树叶，要么其儿子说在[2,M]之间。
+* 除根外，所有非叶节点的儿子树在[M/2, M]之间。
+* 所有树叶都在相同深度上，且所有数据存在树叶上。
+* 有 k 个子节点的非叶子节点拥有 k − 1 个键，每一个内部节点的键将节点的子树分开，每个键值表示后一个叶子节点的最小值。
+2. 操作：
+* 插入：搜索树找到叶子节点，如果可以容纳，直接插入；该叶子节点没有空间，通过分裂，插入
+* 删除：删除之后，如果不满足空间条件，可以通过合并兄弟，更新父节点键值完成。
+3. [实现参考](https://blog.csdn.net/xiaohusaier/article/details/76708490).
+
+#### 附加
+1. B+树：在B-tree的基础上，为叶子节点增加链表指针。[参考](https://blog.csdn.net/xiaohusaier/article/details/77101640)
+2. 红黑树：不完全的平衡，避免想AVL树一样每次插入都要调整。[参考](https://blog.csdn.net/v_july_v/article/details/6114226)
+
+#### **总结：树很重要，要清清楚楚，要能从二叉树开始讲，遍历，二叉查找树，AVL，B-，红黑树。都什么特点，怎么操作，为什么不断延伸，解决什么问题能说的清楚明白。**
+----
 
 ## 3. 总结
