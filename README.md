@@ -128,7 +128,7 @@ struct TreeNode
 * 尽量根据关键字特性，进行映射，分布越均匀越好。Hash大小为素数。
 * 其他参考书中内容。
 
-#### 3. 解决冲突：[分离连接](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/1_Separate_Chaining_Methond.c)，[开放定址](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/2_Open_Addressing_Hashing.c)。
+#### 3. 解决冲突：[分离连接](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/1_Separate_Chaining_Methond.c)，[开放定址](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/2_Open_Addressing_Hashing.c)。[参考网上代码](https://www.kancloud.cn/digest/datastructures/195134)
 * 分离连接：把Hash中散列到同一个位置的元素保留到一个表中。[代码参考](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/1_Separate_Chaining_Methond.c)
 * 开放定址：有冲突，尝试另外的单元。H(X) = (Hash(X) + F(i) mod TableSize). 线性探测 - F(i) = i. 平方探测 - F(i) = i^2。[代码参考](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/2_Open_Addressing_Hashing.c).
 * 再散列：开辟更大的散列表（当前散列大小2倍的素数），然后复制旧的到新的散列中。
