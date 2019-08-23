@@ -124,11 +124,11 @@ struct TreeNode
 * 1 散列函数：根据关键字的值，把关键字映射为0~TableSize-1中的某个数，然后放到固定单元中。这个映射就是散列函数
 * 2 解决冲突：当两个关键字通过散列函数映射到相同值时，如何解决放到不同的位置。
 
-#### 2. 散列函数：有多种不同的函数。[具体参考代码内容使用](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/1_Separate_Chaining_Methond.c)
+#### 2. [散列函数：有多种不同的函数。](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/1_Separate_Chaining_Methond.c)
 * 尽量根据关键字特性，进行映射，分布越均匀越好。Hash大小为素数。
 * 其他参考书中内容。
 
-#### 3. 解决冲突：分离连接，开放定址。
+#### 3. 解决冲突：[分离连接](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/1_Separate_Chaining_Methond.c)，[开放定址](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/2_Open_Addressing_Hashing.c)。
 * 分离连接：把Hash中散列到同一个位置的元素保留到一个表中。[代码参考](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/1_Separate_Chaining_Methond.c)
 * 开放定址：有冲突，尝试另外的单元。H(X) = (Hash(X) + F(i) mod TableSize). 线性探测 - F(i) = i. 平方探测 - F(i) = i^2。[代码参考](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/2_Open_Addressing_Hashing.c).
 * 再散列：开辟更大的散列表（当前散列大小2倍的素数），然后复制旧的到新的散列中。
