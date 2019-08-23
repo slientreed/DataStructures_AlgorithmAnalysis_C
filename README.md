@@ -55,7 +55,7 @@
 #### ***总结：这三个是最基础的数据结构，后面高级数据结构以及算法的实现会大量用到它们，要烂熟于心，灵活调用！***
 
 ----
-### [第4章 树]()  - 2019.8.14
+### [第4章 树](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/tree/master/ch04_Tree)  - 2019.8.14
 #### 4.1 树的定义实现，遍历和应用
 1. 实现：树节点结构体：每个节点存放数据，以及儿子节点的指针。
 2. 应用：操作系统目录结构。
@@ -119,5 +119,25 @@ struct TreeNode
 
 #### **总结：树很重要，要清清楚楚，要能从二叉树开始讲，遍历，二叉查找树，AVL，B-，红黑树。都什么特点，怎么操作，为什么不断延伸，解决什么问题能说的清楚明白。**
 ----
+### [第5章 散列Hash表](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/tree/master/ch05_Hash)  - 2019.8.23
+#### 1. Hash构成：关键字+数组
+* 1 散列函数：根据关键字的值，把关键字映射为0~TableSize-1中的某个数，然后放到固定单元中。这个映射就是散列函数
+* 2 解决冲突：当两个关键字通过散列函数映射到相同值时，如何解决放到不同的位置。
+
+#### 2. 散列函数：有多种不同的函数。[具体参考代码内容使用](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/1_Separate_Chaining_Methond.c)
+* 尽量根据关键字特性，进行映射，分布越均匀越好。Hash大小为素数。
+* 其他参考书中内容。
+
+#### 3. 解决冲突：分离连接，开放定址。
+* 分离连接：把Hash中散列到同一个位置的元素保留到一个表中。[代码参考](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/1_Separate_Chaining_Methond.c)
+* 开放定址：有冲突，尝试另外的单元。H(X) = (Hash(X) + F(i) mod TableSize). 线性探测 - F(i) = i. 平方探测 - F(i) = i^2。[代码参考](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch05_Hash/2_Open_Addressing_Hashing.c).
+* 再散列：开辟更大的散列表（当前散列大小2倍的素数），然后复制旧的到新的散列中。
+
+#### 4. 可扩散列
+* 增加散列关键字，增加可访问散列大小
+
+#### **总结：明白散列函数+解决冲突方法，就对散列清楚了，多看代码，画图分析！**
+----
+
 
 ## 3. 总结
