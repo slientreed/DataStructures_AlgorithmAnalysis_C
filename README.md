@@ -139,5 +139,27 @@ struct TreeNode
 #### **总结：明白散列函数+解决冲突方法，就对散列清楚了，多看代码，画图分析！**
 ----
 
+### [6 优先队列（堆）](). - 2019.8.25
+#### 1. 模型讲解
+1. 返回优先级最高的数据结构，最大最小堆。有Insert，DeleteMin操作等
+2. 实现方法极其复杂度
+
+实现方法 | Insert | DeleteMin
+--- | --- | --- |
+链表 | O(1) | O(n)
+--- | --- | --- |
+二叉查找树 | log(n) | log(n)
+--- | --- | --- | 
+二叉堆 | log(n) | O(1)
+
+#### [2. 二叉堆的极其实现](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch06_Heap/1_Min_Heap.c) - 2019.8.25
+1. 性质
+* 结构性质：是完全二叉树（完全二叉树的第i个节点的父节点是i/2,左子节点是2i,右子节点是2i+1）。
+* 堆序性质：父节点小于左右子节点。
+2. [操作以及代码实现](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch06_Heap/1_Min_Heap.c)
+* Insert:上滤
+* DeleteMin：下滤
+3. [实现的网上参考代码](https://blog.csdn.net/u012796139/article/details/41603987)。
+
 
 ## 3. 总结
