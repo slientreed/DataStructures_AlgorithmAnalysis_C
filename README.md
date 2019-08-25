@@ -147,12 +147,10 @@ struct TreeNode
 实现方法 | Insert | DeleteMin
 --- | --- | --- |
 链表 | O(1) | O(n)
---- | --- | --- |
 二叉查找树 | log(n) | log(n)
---- | --- | --- | 
 二叉堆 | log(n) | O(1)
 
-#### [2. 二叉堆的极其实现](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch06_Heap/1_Min_Heap.c) - 2019.8.25
+#### [2. 二叉堆的及其实现](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch06_Heap/1_Min_Heap.c) - 2019.8.25
 1. 性质
 * 结构性质：是完全二叉树（完全二叉树的第i个节点的父节点是i/2,左子节点是2i,右子节点是2i+1）。
 * 堆序性质：父节点小于左右子节点。
