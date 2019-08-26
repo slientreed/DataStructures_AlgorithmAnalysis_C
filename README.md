@@ -181,8 +181,18 @@ struct TreeNode
 #### **总结：1.最重要的是二叉堆，要烂熟于心这个，后面排序要用。2.左式堆，斜堆，二项队列都没实现，抽时间再来补充**
 ----
 
+
+
 ## 3. 总结
 
 ## 4. 参考
-1. [网上大佬对数据结构和算法的总结分析](https://www.cnblogs.com/skywang12345/p/3603935.html)
+1. [Mooc的算法学习代码](https://github.com/slientreed/Mooc_Algorithm).
+* 里面有一些基础的算法C++实现，以及算法改进，可以看一看。
+2. [个人剑指offer刷题记录](https://github.com/slientreed/Point2OfferCode)。
+* 里面是《剑指offer》书的全部实现代码，有大量实现和测试，对我收获颇多，常看。
+3. [跟人对C++的一些练习](https://github.com/slientreed/Cplusplus_Learning)
+* 这里是对C++的练习，以后会慢慢加深的，包括语法，STL实现等等。
+4. [网上大佬对数据结构和算法的总结分析](https://www.cnblogs.com/skywang12345/p/3603935.html)
+
+
 
