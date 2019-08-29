@@ -262,6 +262,57 @@ void Qsort(ElementType A[], int Left, int Right)
 
 
 
+// 6. 桶排序：----------------------------------------------------------------------------------------------------------------------------
+/*
+ 1. 桶排序思路：基于计数的排序方法，而不是和前面5个一样基于比较（基于比较有个下界是O(NlogN)。其思路是把N个数据分到有限数量M个桶内（桶内可以是链表/数组），在对每个桶的数据进行排序，最后把所有桶内有序的数据拼接在一起，就组成了有序的数据。复杂度是O(M + N).M的复杂度主要来自每个桶内数据的排序，当M = N时，每个桶内数据不用排序，最快O(N).
+ 
+ 2. 步骤：1. 选取固定数量的空桶；
+         2. 把数据分到对应的桶中，并记录桶的内数据数量；
+         3. 对桶内数量不为0的数据排序，使得每个桶内数据有序；
+         4. 对所有桶进行拼接，形成有序数据。
+ 
+ 3. 参考：https://blog.csdn.net/hitwhylz/article/details/9987367
+ */
+
+
+// 返回未排序数组的最大元素值
+int getMaxVal(ElementType Arr[], int N)
+{
+    int maxVal = Arr[0];
+    for(int i = 1; i < N; ++i)
+    {
+        if(Arr[i] > maxVal)
+            maxVal = Arr[i];
+    }
+    
+    return maxVal;
+}
+
+
+// 桶排序函数
+void BucketSort(ElementType Arr[], int N)
+{
+    int BucketLen = getMaxVal(Arr, N) + 1;      // 桶的大小
+    int BucketArr[BucketLen];   // 创建桶
+    for(int i = 0; i < BucketLen; ++i)    // 初始化桶为0
+        BucketArr[i] = 0;
+    
+    for(int i = 0; i < N; i++)       // 把数据一个一个放到桶中，Arr[i] = 桶的下标, 并记录桶的内的个数
+        BucketArr[ Arr[i] ]++;
+    
+    int j = 0;
+    for(int i = 0; i < BucketLen; i++)      // 再把桶的下标按顺序放回原数组，完成排序
+    {
+        while(BucketArr[i] != 0)           // 如果桶下标对应数据个数不为0，则把下标放到原数组，完成排序
+        {
+            Arr[j++] = i;
+            BucketArr[i]--;
+        }
+    }
+        
+}
+
+
 
 // 辅助函数----------------------------------------------------------------------------------------------------------------------------
 
@@ -345,6 +396,15 @@ int main() {
     printf("\n");
     
     
+    printf("6. 桶排序测试：------------------\n");
+    ElementType F[] = {8, 4, 2, 3, 5, 1, 6, 9, 0, 7};
+    printf("排序前：");
+    PrintArray(F, 10);
+    
+    BucketSort(F, 10);
+    printf("排序后：");
+    PrintArray(F, 10);
+    printf("\n");
     
     
     return 0;
