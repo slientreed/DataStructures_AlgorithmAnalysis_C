@@ -221,7 +221,10 @@ struct TreeNode
 1. Find: 返回树根 -> 路径压缩优化
 2. Union: 随机求并 -> 按大小求并 -> 按深度求并。 
 3. 复杂度：对N个元素进行M次Find-Union操作 - O(MlogN)。
+#### [4. 之前C++学习对并查集的实现,可参考](https://github.com/slientreed/Mooc_Algorithm/tree/master/6%E7%AB%A0_%E5%B9%B6%E6%9F%A5%E9%9B%86)
 
+#### **总结： 要清晰思虑，写算法题中要会自己很快实现，并会用**
+----
 
 ## 3. 总结
 
