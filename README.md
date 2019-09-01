@@ -217,7 +217,7 @@ struct TreeNode
 #### 2. 基本数据结构
 1. 数组：对每个数组内的元素维护一个id号，表示所属的集合；
 2. 树：不断判断root节点，表示所属的集合；
-#### 3. 操作
+#### [3. 操作](https://github.com/slientreed/DataStructures_AlgorithmAnalysis_C/blob/master/ch08_Union_Find/1_Union_Find.c)
 1. Find: 返回树根 -> 路径压缩优化
 2. Union: 随机求并 -> 按大小求并 -> 按深度求并。 
 3. 复杂度：对N个元素进行M次Find-Union操作 - O(MlogN)。
